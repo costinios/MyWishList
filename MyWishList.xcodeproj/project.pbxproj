@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0C455F1FCCB05F002B3575 /* new_panamera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0C455E1FCCB05E002B3575 /* new_panamera.jpg */; };
+		1F0C45621FCCB43D002B3575 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C45611FCCB43D002B3575 /* MaterialView.swift */; };
+		1F0C45641FCCBBA6002B3575 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C45631FCCBBA6002B3575 /* ItemCell.swift */; };
+		1F1DACC51FCDF03B0011C4F2 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DACC41FCDF03B0011C4F2 /* ItemDetailsVC.swift */; };
 		1FE6B35D1FCB6AD00051A7A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6B35C1FCB6AD00051A7A4 /* AppDelegate.swift */; };
-		1FE6B35F1FCB6AD00051A7A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6B35E1FCB6AD00051A7A4 /* ViewController.swift */; };
+		1FE6B35F1FCB6AD00051A7A4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6B35E1FCB6AD00051A7A4 /* MainVC.swift */; };
 		1FE6B3621FCB6AD00051A7A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6B3601FCB6AD00051A7A4 /* Main.storyboard */; };
 		1FE6B3651FCB6AD00051A7A4 /* MyWishList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6B3631FCB6AD00051A7A4 /* MyWishList.xcdatamodeld */; };
 		1FE6B3671FCB6AD00051A7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6B3661FCB6AD00051A7A4 /* Assets.xcassets */; };
@@ -24,9 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F0C455E1FCCB05E002B3575 /* new_panamera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_panamera.jpg; sourceTree = "<group>"; };
+		1F0C45611FCCB43D002B3575 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		1F0C45631FCCBBA6002B3575 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		1F1DACC41FCDF03B0011C4F2 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
 		1FE6B3591FCB6AD00051A7A4 /* MyWishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE6B35C1FCB6AD00051A7A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FE6B35E1FCB6AD00051A7A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1FE6B35E1FCB6AD00051A7A4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		1FE6B3611FCB6AD00051A7A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FE6B3641FCB6AD00051A7A4 /* MyWishList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyWishList.xcdatamodel; sourceTree = "<group>"; };
 		1FE6B3661FCB6AD00051A7A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0C45601FCCB419002B3575 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C45611FCCB43D002B3575 /* MaterialView.swift */,
+				1F0C45631FCCBBA6002B3575 /* ItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F1DACC31FCDEFF50011C4F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FE6B35E1FCB6AD00051A7A4 /* MainVC.swift */,
+				1F1DACC41FCDF03B0011C4F2 /* ItemDetailsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1FE6B3501FCB6AD00051A7A4 = {
 			isa = PBXGroup;
 			children = (
@@ -73,13 +99,15 @@
 			isa = PBXGroup;
 			children = (
 				1FE6B3A31FCB75B30051A7A4 /* Model */,
-				1FE6B35C1FCB6AD00051A7A4 /* AppDelegate.swift */,
-				1FE6B35E1FCB6AD00051A7A4 /* ViewController.swift */,
-				1FE6B3601FCB6AD00051A7A4 /* Main.storyboard */,
+				1F0C45601FCCB419002B3575 /* View */,
+				1F1DACC31FCDEFF50011C4F2 /* Controller */,
 				1FE6B3661FCB6AD00051A7A4 /* Assets.xcassets */,
+				1FE6B3601FCB6AD00051A7A4 /* Main.storyboard */,
+				1FE6B35C1FCB6AD00051A7A4 /* AppDelegate.swift */,
 				1FE6B3681FCB6AD00051A7A4 /* LaunchScreen.storyboard */,
 				1FE6B36B1FCB6AD00051A7A4 /* Info.plist */,
 				1FE6B3631FCB6AD00051A7A4 /* MyWishList.xcdatamodeld */,
+				1F0C455E1FCCB05E002B3575 /* new_panamera.jpg */,
 			);
 			path = MyWishList;
 			sourceTree = "<group>";
@@ -167,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE6B36A1FCB6AD00051A7A4 /* LaunchScreen.storyboard in Resources */,
+				1F0C455F1FCCB05F002B3575 /* new_panamera.jpg in Resources */,
 				1FE6B3671FCB6AD00051A7A4 /* Assets.xcassets in Resources */,
 				1FE6B3621FCB6AD00051A7A4 /* Main.storyboard in Resources */,
 			);
@@ -179,12 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0C45641FCCBBA6002B3575 /* ItemCell.swift in Sources */,
 				1FE6B3651FCB6AD00051A7A4 /* MyWishList.xcdatamodeld in Sources */,
 				1FE6B39D1FCB75350051A7A4 /* Store+CoreDataClass.swift in Sources */,
 				1FE6B3A01FCB75350051A7A4 /* ItemType+CoreDataProperties.swift in Sources */,
-				1FE6B35F1FCB6AD00051A7A4 /* ViewController.swift in Sources */,
+				1F0C45621FCCB43D002B3575 /* MaterialView.swift in Sources */,
+				1FE6B35F1FCB6AD00051A7A4 /* MainVC.swift in Sources */,
 				1FE6B39B1FCB75350051A7A4 /* Item+CoreDataClass.swift in Sources */,
 				1FE6B39F1FCB75350051A7A4 /* ItemType+CoreDataClass.swift in Sources */,
+				1F1DACC51FCDF03B0011C4F2 /* ItemDetailsVC.swift in Sources */,
 				1FE6B39E1FCB75350051A7A4 /* Store+CoreDataProperties.swift in Sources */,
 				1FE6B35D1FCB6AD00051A7A4 /* AppDelegate.swift in Sources */,
 				1FE6B39C1FCB75350051A7A4 /* Item+CoreDataProperties.swift in Sources */,
