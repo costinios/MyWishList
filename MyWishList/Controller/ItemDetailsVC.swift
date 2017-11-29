@@ -9,21 +9,26 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var detailsField: UITextField!
+    @IBOutlet weak var thumbImg: UIImageView!
     
     var stores = [Store]()
     var itemToEdit: Item?
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         storePicker.delegate = self
         storePicker.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
         let store = Store(context: context)
         store.name = "Porsche Berlin"
@@ -35,8 +40,9 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         store3.name = "iStyle Iulius"
         let store4 = Store(context: context)
         store4.name = "Hublot Store"
-        
-        ad.saveContext()
+
+//        ad.saveContext()
+
         getStore()
         
         if itemToEdit != nil {
@@ -75,12 +81,15 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func savePressed(_ sender: UIButton) {
         
         var item: Item!
+        let picture = Image(context: context)
+        picture.image = thumbImg.image
         
         if itemToEdit == nil {
             item = Item(context: context)
         } else {
             item = itemToEdit
         }
+        item.toImage = picture
         
         if let title = titleField.text {
             item.title = title
@@ -104,6 +113,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             priceField.text = "\(item.price)"
             detailsField.text = item.detail
             
+            thumbImg.image = item.toImage?.image as? UIImage
+            
             if let store = item.toStore {
                 var index = 0
                 repeat {
@@ -120,6 +131,26 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
     }
     @IBAction func deletePressed(_ sender: UIBarButtonItem) {
+        
+        if itemToEdit != nil {
+            context.delete(itemToEdit!)
+            ad.saveContext()
+        }
+        navigationController?.popViewController(animated: true)
+        
     }
     
+    @IBAction func addImage(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            thumbImg.image = img
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
 }
